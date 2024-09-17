@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexed Uppercase String</title>
+</head>
+<body>
+
+    <h2>Enter a string:</h2>
+    <input type="text" id="inputString" placeholder="Type your string here">
+    <button onclick="displayIndexedUppercase()">Submit</button>
+
+    <p id="output"></p>
+
+    <script>
+       
+        const indexedUppercase = str => {
+            return str
+                .split('') 
+                .map((char, index) => index + char.toUpperCase()) 
+                .join(''); 
+        };
+
+     
+        const displayIndexedUppercase = () => {
+            const inputStr = document.getElementById('inputString').value;
+            const result = indexedUppercase(inputStr); 
+            document.getElementById('output').textContent = result; 
+        };
+    </script>
+
+</body>
+</html>
